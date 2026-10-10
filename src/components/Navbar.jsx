@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Phone, Mail, MapPin, Play, FileText, Sparkles, GraduationCap, ChevronRight } from 'lucide-react';
+import { Menu, X, Phone, Mail, MapPin, Play, FileText, GraduationCap, ChevronRight } from 'lucide-react';
 
 export default function Navbar({ activeSection, setActiveSection, onOpenIntro, onOpenDisclosure }) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -7,7 +7,7 @@ export default function Navbar({ activeSection, setActiveSection, onOpenIntro, o
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 30) {
+      if (window.scrollY > 20) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
@@ -38,37 +38,38 @@ export default function Navbar({ activeSection, setActiveSection, onOpenIntro, o
   return (
     <header className="fixed top-0 left-0 right-0 z-40 transition-all duration-300">
       {/* Top Contact Bar */}
-      <div className="bg-slate-950/95 border-b border-slate-800/80 text-xs py-2 px-4 md:px-8">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
-          <div className="flex items-center gap-4 text-slate-300">
-            <a href="tel:8762788533" className="flex items-center gap-1.5 hover:text-amber-400 transition font-medium">
-              <Phone className="w-3.5 h-3.5 text-amber-400" />
+      <div className="bg-slate-950/95 border-b border-slate-800/80 text-[11px] sm:text-xs py-1.5 px-3 md:px-8">
+        <div className="max-w-7xl mx-auto flex flex-row justify-between items-center gap-2">
+          <div className="flex items-center gap-3 text-slate-300">
+            <a href="tel:8762788533" className="flex items-center gap-1 hover:text-amber-400 transition font-medium">
+              <Phone className="w-3 h-3 text-amber-400" />
               <span>8762788533</span>
             </a>
             <span className="hidden sm:inline text-slate-700">•</span>
-            <a href="mailto:principaleshwar@gmail.com" className="hidden sm:flex items-center gap-1.5 hover:text-amber-400 transition">
-              <Mail className="w-3.5 h-3.5 text-amber-400" />
+            <a href="mailto:principaleshwar@gmail.com" className="hidden sm:flex items-center gap-1 hover:text-amber-400 transition">
+              <Mail className="w-3 h-3 text-amber-400" />
               <span>principaleshwar@gmail.com</span>
             </a>
             <span className="hidden md:inline text-slate-700">•</span>
-            <span className="hidden md:flex items-center gap-1.5 text-slate-400">
-              <MapPin className="w-3.5 h-3.5 text-amber-400" />
+            <span className="hidden md:flex items-center gap-1 text-slate-400">
+              <MapPin className="w-3 h-3 text-amber-400" />
               <span>Choranahalli, Mysuru</span>
             </span>
           </div>
 
-          <div className="flex items-center gap-3">
-            <span className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-semibold text-[11px]">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-              Admissions Open 2026-27
+          <div className="flex items-center gap-2">
+            <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-semibold text-[10px] sm:text-[11px]">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
+              Admissions 2026-27
             </span>
 
             <button
               onClick={onOpenDisclosure}
-              className="inline-flex items-center gap-1.5 text-slate-300 hover:text-amber-400 transition font-medium"
+              className="inline-flex items-center gap-1 text-slate-300 hover:text-amber-400 transition font-medium text-[10px] sm:text-xs"
             >
-              <FileText className="w-3.5 h-3.5 text-amber-400" />
-              <span>CBSE Mandatory Disclosure</span>
+              <FileText className="w-3 h-3 text-amber-400" />
+              <span className="hidden sm:inline">CBSE Mandatory Disclosure</span>
+              <span className="sm:hidden">Disclosure</span>
             </button>
           </div>
         </div>
@@ -77,22 +78,22 @@ export default function Navbar({ activeSection, setActiveSection, onOpenIntro, o
       {/* Main Header */}
       <nav className={`transition-all duration-300 ${
         isScrolled 
-          ? 'bg-slate-950/95 backdrop-blur-xl border-b border-slate-800 shadow-2xl py-3' 
-          : 'bg-gradient-to-b from-slate-950/90 to-transparent py-4'
+          ? 'bg-slate-950/95 backdrop-blur-xl border-b border-slate-800 shadow-2xl py-2 sm:py-3' 
+          : 'bg-gradient-to-b from-slate-950/90 to-transparent py-2.5 sm:py-4'
       }`}>
-        <div className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 md:px-8 flex items-center justify-between">
           
           {/* Official Circle Badge Logo */}
           <div 
             onClick={() => scrollToSection('home')}
-            className="flex items-center gap-3.5 cursor-pointer group"
+            className="flex items-center gap-2.5 sm:gap-3.5 cursor-pointer group"
           >
             <div className="relative">
-              <div className="absolute -inset-1 rounded-full bg-amber-500/20 blur-md group-hover:bg-amber-500/40 transition duration-300" />
+              <div className="absolute -inset-1 rounded-full bg-amber-500/20 blur-sm group-hover:bg-amber-500/40 transition duration-300" />
               <img 
                 src="/assets/official_logo.svg" 
                 alt="Eshwar Vidyalaya Logo" 
-                className="relative h-12 w-12 md:h-14 md:w-14 rounded-full object-contain bg-white border-2 border-amber-500/40 shadow-xl group-hover:scale-105 transition-transform p-0.5"
+                className="relative h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14 rounded-full object-contain bg-white border-2 border-amber-500/40 shadow-lg group-hover:scale-105 transition-transform p-0.5"
                 onError={(e) => {
                   e.target.onerror = null;
                   e.target.src = '/assets/official_logo.png';
@@ -101,12 +102,12 @@ export default function Navbar({ activeSection, setActiveSection, onOpenIntro, o
             </div>
 
             <div>
-              <div className="flex items-center gap-2">
-                <span className="text-lg md:text-2xl font-extrabold text-white tracking-tight group-hover:text-amber-300 transition">
+              <div className="flex items-center gap-1">
+                <span className="text-base sm:text-xl md:text-2xl font-extrabold text-white tracking-tight group-hover:text-amber-300 transition leading-tight">
                   ESHWAR VIDYALAYA
                 </span>
               </div>
-              <p className="text-[11px] font-bold text-amber-400 tracking-wider uppercase">
+              <p className="text-[9px] sm:text-[11px] font-bold text-amber-400 tracking-wider uppercase leading-none mt-0.5">
                 The School of Experience
               </p>
             </div>
@@ -150,19 +151,20 @@ export default function Navbar({ activeSection, setActiveSection, onOpenIntro, o
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="flex md:hidden items-center gap-2">
+          <div className="flex md:hidden items-center gap-1.5">
             <button
               onClick={onOpenIntro}
-              className="p-2 rounded-full bg-slate-900 border border-amber-500/30 text-amber-400"
+              className="p-1.5 rounded-full bg-slate-900 border border-amber-500/30 text-amber-400"
+              title="Watch Intro"
             >
-              <Play className="w-4 h-4 fill-amber-400" />
+              <Play className="w-3.5 h-3.5 fill-amber-400" />
             </button>
 
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 hover:text-white"
+              className="p-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 hover:text-white"
             >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
         </div>
@@ -170,32 +172,32 @@ export default function Navbar({ activeSection, setActiveSection, onOpenIntro, o
 
       {/* Mobile Menu Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden fixed inset-x-0 top-[105px] bottom-0 bg-slate-950/98 backdrop-blur-2xl z-50 p-6 flex flex-col justify-between overflow-y-auto border-t border-slate-800">
-          <div className="space-y-3">
-            <p className="text-xs font-bold text-slate-400 uppercase tracking-widest px-3 mb-2">Navigation Menu</p>
+        <div className="md:hidden fixed inset-x-0 top-[90px] bottom-0 bg-slate-950/98 backdrop-blur-2xl z-50 p-5 flex flex-col justify-between overflow-y-auto border-t border-slate-800">
+          <div className="space-y-2.5">
+            <p className="text-xs font-bold text-slate-400 uppercase tracking-widest px-3 mb-1">Navigation Menu</p>
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`w-full flex items-center justify-between px-4 py-3.5 rounded-xl text-left font-semibold text-base transition ${
+                className={`w-full flex items-center justify-between px-4 py-3 rounded-xl text-left font-semibold text-sm transition ${
                   activeSection === item.id
                     ? 'bg-amber-500 text-slate-950 font-bold'
                     : 'bg-slate-900/60 border border-slate-800/80 text-slate-200 hover:bg-slate-800'
                 }`}
               >
                 <span>{item.label}</span>
-                <ChevronRight className="w-5 h-5 opacity-60" />
+                <ChevronRight className="w-4 h-4 opacity-60" />
               </button>
             ))}
           </div>
 
-          <div className="pt-6 border-t border-slate-800 space-y-3">
+          <div className="pt-4 border-t border-slate-800 space-y-2.5 mb-14">
             <button
               onClick={() => {
                 setMobileMenuOpen(false);
                 onOpenDisclosure();
               }}
-              className="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-slate-900 border border-slate-700 text-amber-300 font-semibold text-sm"
+              className="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-slate-900 border border-slate-700 text-amber-300 font-semibold text-xs"
             >
               <FileText className="w-4 h-4" />
               <span>CBSE Mandatory Disclosure</span>
@@ -203,15 +205,15 @@ export default function Navbar({ activeSection, setActiveSection, onOpenIntro, o
 
             <button
               onClick={() => scrollToSection('admissions')}
-              className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 font-extrabold text-base shadow-lg shadow-amber-500/20"
+              className="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 font-extrabold text-sm shadow-lg shadow-amber-500/20"
             >
-              <GraduationCap className="w-5 h-5" />
+              <GraduationCap className="w-4 h-4" />
               <span>Enroll Your Child for 2026-27</span>
             </button>
 
-            <div className="text-center pt-2">
-              <p className="text-xs text-slate-400">CBSE Affiliation No. 830544</p>
-              <p className="text-xs text-amber-400/90 font-medium">Sy no. 32/2, Choranahalli, Mysuru</p>
+            <div className="text-center pt-1">
+              <p className="text-[11px] text-slate-400">CBSE Affiliation No. 830544</p>
+              <p className="text-[11px] text-amber-400/90 font-medium">Sy no. 32/2, Choranahalli, Mysuru</p>
             </div>
           </div>
         </div>
