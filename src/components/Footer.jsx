@@ -17,12 +17,12 @@ export default function Footer({ onOpenDisclosure, onOpenIntro, onNavigate }) {
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center gap-3">
               <img 
-                src="/assets/school_img_16.png" 
+                src="/assets/official_logo.svg" 
                 alt="Eshwar Vidyalaya Logo" 
-                className="h-12 w-auto object-contain"
+                className="h-12 w-12 rounded-full object-contain bg-white border border-amber-400/40 p-0.5 shadow"
                 onError={(e) => {
                   e.target.onerror = null;
-                  e.target.src = '/assets/school_img_2.png';
+                  e.target.src = '/assets/official_logo.png';
                 }}
               />
               <div>

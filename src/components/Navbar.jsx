@@ -82,20 +82,20 @@ export default function Navbar({ activeSection, setActiveSection, onOpenIntro, o
       }`}>
         <div className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between">
           
-          {/* Logo & Brand Name */}
+          {/* Official Circle Badge Logo */}
           <div 
             onClick={() => scrollToSection('home')}
             className="flex items-center gap-3.5 cursor-pointer group"
           >
             <div className="relative">
-              <div className="absolute -inset-1 rounded-full bg-rose-500/20 blur-md group-hover:bg-rose-500/40 transition duration-300" />
+              <div className="absolute -inset-1 rounded-full bg-amber-500/20 blur-md group-hover:bg-amber-500/40 transition duration-300" />
               <img 
-                src="/assets/official_logo.jpg" 
-                alt="Eshwar Vidyalaya Official Logo" 
-                className="relative h-12 w-12 md:h-14 md:w-14 rounded-full object-cover border-2 border-amber-500/40 shadow-lg group-hover:scale-105 transition-transform"
+                src="/assets/official_logo.svg" 
+                alt="Eshwar Vidyalaya Logo" 
+                className="relative h-12 w-12 md:h-14 md:w-14 rounded-full object-contain bg-white border-2 border-amber-500/40 shadow-xl group-hover:scale-105 transition-transform p-0.5"
                 onError={(e) => {
                   e.target.onerror = null;
-                  e.target.src = '/assets/school_img_16.png';
+                  e.target.src = '/assets/official_logo.png';
                 }}
               />
             </div>

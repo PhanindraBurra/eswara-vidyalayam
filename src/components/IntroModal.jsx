@@ -101,12 +101,12 @@ export default function IntroModal({ isOpen, onClose }) {
         <div className="absolute top-6 left-6 right-6 z-20 flex justify-between items-center">
           <div className="flex items-center gap-3">
             <img 
-              src="/assets/official_logo.jpg" 
+              src="/assets/official_logo.svg" 
               alt="Eshwar Vidyalaya Official Logo" 
-              className="h-12 w-12 rounded-full object-cover border-2 border-amber-400/50 shadow-md"
+              className="h-12 w-12 rounded-full object-contain bg-white border-2 border-amber-400/50 shadow-md p-0.5"
               onError={(e) => {
                 e.target.onerror = null;
-                e.target.src = '/assets/school_img_16.png';
+                e.target.src = '/assets/official_logo.png';
               }}
             />
             <div>
